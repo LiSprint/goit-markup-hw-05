@@ -7,6 +7,8 @@
   --light-backgroung-color: #f5f4fa;
   --button-hover-color: #188ce8;
   --primary-icon-color: #afb1b8;
+  --transition-duration: 250ms;
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list {
@@ -102,6 +104,10 @@ body {
   padding-top: 32px;
   padding-bottom: 32px;
   position: relative;
+
+  transition-property: color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .current::after {
@@ -122,6 +128,10 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--primary-black-color);
+
+  transition-property: color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .header-link.current {
@@ -201,6 +211,10 @@ body {
   padding: 10px 32px;
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition-property: background-color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .hero-btn:hover,
@@ -358,6 +372,9 @@ body {
   align-items: center;
   border-radius: 50%;
   color: var(--primary-icon-color);
+  transition-property: background-color, color;
+  transition-duration: var(--transition-duration), var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function), var(--transition-timing-function);
 }
 
 .team-social-link:hover,
@@ -399,6 +416,9 @@ body {
   color: var(--primary-icon-color);
   border: 1px solid var(--primary-icon-color);
   border-radius: 4px;
+  transition-property: color, border;
+  transition-duration: var(--transition-duration), var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function), var(--transition-timing-function);
 }
 
 .clients-link:hover,
@@ -442,6 +462,22 @@ body {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  position: relative;
+}
+
+.modal-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--primary-white-color);
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 /* Футер */
@@ -468,6 +504,10 @@ body {
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 9px;
   display: block;
+
+  transition-property: color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .link.footer-address {
@@ -503,19 +543,21 @@ body {
   justify-content: center;
   align-items: center;
   color: var(--primary-white-color);
+  transition-property: background-color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: var(--accent-color);
+}
 .footer-social-list {
   display: flex;
 }
 
 .footer-social-item + .footer-social-item {
   margin-left: 10px;
-}
-
-.footer-social-link:hover,
-.footer-social-link:focus {
-  background-color: var(--accent-color);
 }
 
 .footer-content {
@@ -547,6 +589,11 @@ body {
   border-radius: 4px;
   padding: 6px 22px;
   border: none;
+  transition-property: color, background-color, box-shadow;
+  transition-duration: var(--transition-duration), var(--transition-duration),
+    var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function), var(--transition-timing-function),
+    var(--transition-timing-function);
 }
 
 .filter-btn-item:not(:last-child) {
@@ -583,6 +630,9 @@ body {
   flex-basis: calc(100% / 3 -30px);
   margin-left: 30px;
   margin-top: 30px;
+  transition-property: box-shadow;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .project-item:hover {
@@ -606,4 +656,8 @@ body {
 .project-content {
   padding: 20px 24px;
   border: 1px solid var(--light-backgroung-color);
+}
+
+.project-thumb::before {
+  content: '';
 }
