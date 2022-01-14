@@ -658,6 +658,32 @@ body {
   border: 1px solid var(--light-backgroung-color);
 }
 
-.project-thumb::before {
+.project-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-overlay {
   content: '';
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  transition: transform var(--transition-duration) var(--transition-timing-function);
+}
+
+.project-item:hover .project-overlay {
+  transform: translateY(0);
+}
+
+.project-description {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--primary-white-color);
+  padding: 63px 24px;
 }
