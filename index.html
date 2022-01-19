@@ -360,6 +360,35 @@
               <use href="./images/icons.svg#icon-close"></use>
             </svg>
           </button>
+          <form class="modal-form">
+            <div class="form-field">
+              <label class="form-label" for="name">Имя</label>
+              <input class="form-input" type="text" name="name" id="name" />
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="phone">Телефон </label>
+              <input class="form-input" type="tel" name="phone" id="phone" />
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="email">Почта</label>
+              <input class="form-input" type="email" name="email" id="email" />
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="feedback">Комментарий</label>
+              <textarea
+                class="form-input"
+                name="comment"
+                id="feedback"
+                placeholder="Введите текст"
+              ></textarea>
+            </div>
+
+            <input type="checkbox" name="agreement" id="checkbox" />
+            <label class="label-agreement" for="checkbox" name="agreement"
+              >Соглашаюсь с рассылкой и принимаю условия договора</label
+            >
+            <button class="form-btn" type="submit">Отправить</button>
+          </form>
         </div>
       </div>
     </main>
